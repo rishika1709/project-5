@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart - Meesho Website</title>
+    <style>
+        body {
+            font-family: BookmanOldStyle;
+            margin: 0;
+            padding: 0;
+            background-color: navajowhite;
+        }
+
+        header {
+            background-color: purple;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .header-content {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .header-content nav {
+            margin-top: 10px;
+        }
+
+        .header-content nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff4081;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .cart-item p {
+            margin: 0;
+        }
+
+        .total-price {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .empty-cart {
+            text-align: center;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .remove-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button:hover {
+            background-color: darkred;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://img-cdn.thepublive.com/fit-in/580x348/filters:format(webp)/tice-news-prod/media/post_attachments/6e77b763-742.jpg" alt="Meesho Logo">
+        <div class="header-content">
+            <h1>Meesho</h1>
+            <nav>
+                <a href="index.html#kids">Kids</a>
+                <a href="index.html#men">Men</a>
+                <a href="index.html#women">Women</a>
+                <a href="index.html#homeandliving">Home and Living</a>
+                <a href="index.html#beauty">Beauty Products</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Content -->
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="total-price" id="total-price">
+            <!-- Total price will be displayed here -->
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceDiv = document.getElementById("total-price");
+
+        // Retrieve cart from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = ""; // Clear the cart items
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p class='empty-cart'>Your cart is empty.</p>";
+                totalPriceDiv.textContent = "";
+                return;
+            }
+
+            // Display each cart item
+            cart.forEach((item, index) => {
+                const cartItemDiv = document.createElement("div");
+                cartItemDiv.classList.add("cart-item");
+
+                const img = document.createElement("img");
+                img.src = item.imgSrc;
+                cartItemDiv.appendChild(img);
+
+                const title = document.createElement("h3");
+                title.textContent = item.name;
+                cartItemDiv.appendChild(title);
+
+                const price = document.createElement("p");
+                price.textContent = 'Price: $${item.price}';
+                cartItemDiv.appendChild(price);
+
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.classList.add("remove-button");
+                removeButton.addEventListener("click", () => {
+                    removeItemFromCart(index);
+                });
+                cartItemDiv.appendChild(removeButton);
+
+                cartItemsContainer.appendChild(cartItemDiv);
+            });
+
+            // Calculate total price
+            const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+            // Display total price
+            totalPriceDiv.textContent = 'Total Price: $${totalPrice}';
+        }
+
+        function removeItemFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Initial cart display
+        updateCartDisplay();
+    </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meesho Website</title>
+    <style>
+        body {
+            font-family: BookmanOldStyle;
+            margin: 0;
+            padding: 0;
+            background-color: navajowhite;
+        }
+        
+        header {
+            background-color: purple;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+        
+        header img {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        .header-content {
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            margin: 0;
+            color: white;
+        }
+        
+        .header-content nav {
+            margin-top: 10px;
+        }
+        
+        .header-content nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #ff4081;
+        }
+        
+        .product-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card {
+            padding: 10px;
+            width: 23%;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .product-card img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        
+        button.add-to-cart {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button.add-to-cart:hover {
+            background-color: #e91e63;
+        }
+        
+        .main-banner {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .main-banner img.banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://img-cdn.thepublive.com/fit-in/580x348/filters:format(webp)/tice-news-prod/media/post_attachments/6e77b763-742.jpg" alt="Meesho Logo">
+        <div class="header-content">
+            <h1>Meesho</h1>
+            <nav>
+                <a href="#kids">Kids</a>
+                <a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#homeandliving">Home and Living</a>
+                <a href="#beauty">Beauty Products</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="main-banner">
+        <img src="https://i.ytimg.com/vi/cOqqdA-JbU0/maxresdefault.jpg" alt="Sale Banner" class="banner-img" height="50px" width="50px">
+        <div class="banner-text">
+        </div>
+    </section>
+
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Kids Section -->
+        <section id="kids">
+            <h1><center>Kids</center></h2>
+            <div class="product-row">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="https://www.printmate.in/media/catalog/product/cache/1/thumbnail/384x500/9df78eab33525d08d6e5fb8d27136e95/5/_/5_9_2.png" alt="Kids' T-Shirt">
+                    <p class="product-name">Kids' T-Shirt</p>
+                    <p class="product-price">₹499</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+
+
+                    <img src="https://liandli.in/cdn/shop/files/LIDG198_1_-min_600x.jpg?v=1701411393" alt="Kids' Dress">
+                    <p class="product-name">Kids' Dress</p>
+                    <p class="product-price">₹1,199</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="https://assets0.mirraw.com/images/11655979/Pink_Blue_Front___Final_front_11_long_webp.webp?1696930980" alt="Kids' Pants">
+                    <p class="product-name">Silk Skirt</p>
+                    <p class="product-price">₹799</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="https://images-cdn.ubuy.co.in/64e817cd570b2640d95f4764-yunicus-toddler-light-up-shoes-boys.jpg" alt="Kids' Shoes">
+                    <p class="product-name">Kids' Shoes</p>
+                    <p class="product-price">₹899</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Men Section -->
+        <section id="men">
+            <h1><center>Men</center></h2>
+            <div class="product-row">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="https://5.imimg.com/data5/ANDROID/Default/2021/12/DQ/QE/WW/143180375/product-jpeg-500x500.jpg" alt="Men's Casual Shirt">
+                    <p class="product-name">Men's Casual Shirt</p>
+                    <p class="product-price">₹799</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="https://fabrilife.com/products/642ad72b6311d-square.jpg" alt="Men's Denim Jeans">
+                    <p class="product-name">Men's Denim Jeans</p>
+                    <p class="product-price">₹1,299</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="https://stirmas.com/wp-content/uploads/2020/01/Fashion-White-Sneakers-Men-Shoes-Comfort-Men8217s-Trainers-Stirmas.jpg" alt="Men's Sneakers">
+                    <p class="product-name">Men's Sneakers</p>
+                    <p class="product-price">₹999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="https://2.bp.blogspot.com/-XxH9oJPzYdE/VwiZKm_uIMI/AAAAAAAAAes/zYoAc3M03xwIy8rkBhkVyBdeADZcUlr6A/s1600/New%2BStylish%2BDark%2BRed%2BFull%2BDress%2B.jpg" alt="Men Item 4">
+                    <p class="product-name">Men's Formal Suit</p>
+                    <p class="product-price">₹2,999</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women Section -->
+        <section id="women">
+            <h1><center>Women</center></h2>
+            <div class="product-row">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="https://mahezon.in/cdn/shop/files/IMG-20240304_132754_800x1026_crop_center@2x.jpg?v=1709893303" alt="Women's Saree">
+                    <h3>Women's Saree</h3>
+                    <p>Price: $25</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/originals/32/13/d6/3213d670db09cdcd662c56708c723582.jpg" alt="Women's chudidhar">
+                    <h3>Women's chudidhar</h3>
+                    <p>Price: $30</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="https://images.bewakoof.com/utter/content/2911/content_indo_western_dresses_for_wedding_bewakoof_blog_3.jpg" alt="Women's Western Wear">
+                    <h3>Women's Western Wear</h3>
+                    <p>Price: $28</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="https://4.bp.blogspot.com/-6UkFz5_YvTU/VOQtzRVlHXI/AAAAAAAAATI/CspFS7WclL4/s1600/latest%2Bhandbags%2Bdesigns%2Bfor%2Bwomen-girls%2B2015.jpg" alt="Women Item 4">
+                    <h3>Women's Hand Bag</h3>
+                    <p>Price: $35</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <section id="homeandliving">
+                <h1>
+                    <center>Home and Living</center>
+                </h1>
+                <div class="product-row">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="https://www.thespruce.com/thmb/GtlHim5EsWERYoVi62TnWpu6JTA=/5472x3648/filters:fill(auto,1)/GettyImages-9261821821-5c69c1b7c9e77c0001675a49.jpg" alt="women Item 1">
+                        <h3>Sofaset</h3>
+                        <p>Price: $25</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="https://i0.wp.com/magzhouse.com/wp-content/uploads/2019/09/Incredible-Modern-Bedroom-Design-Ideas-19.jpg?ssl=1" alt="Women Item 2">
+                        <h3>Bed</h3>
+                        <p>Price: $30</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="https://www.furniturechoice.co.uk/p/l/DS10008677/DS10008677.jpg" alt="women Item 3">
+                        <h3>Dining Table</h3>
+                        <p>Price: $28</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="https://image.lampsplus.com/is/image/b9gt8/9r009cropped.jpg?qlt=70&wid=1200&hei=1200&fmt=jpeg" alt="women Item 4">
+                        <h3>Lamp</h3>
+                        <p>Price: $35</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <main>
+                <section id="beauty">
+                    <h1>
+                        <center>Beauty Products</center>
+                    </h1>
+                    <div class="product-row">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <img src="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX3684969.jpg" alt="women Item 1">
+                            <h3>Beauty Products</h3>
+                            <p>Price: $25</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <img src="https://img.makeupalley.com/1/1/8/1/3484616.JPG" alt="Women Item 2">
+                            <h3>LipStick</h3>
+                            <p>Price: $30</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <img src="https://www.sephora.com/productimages/sku/s1962026-main-zoom.jpg" alt="women Item 3">
+                            <h3>Perfume</h3>
+                            <p>Price: $28</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <img src="https://thumbs.dreamstime.com/b/nail-polish-23167014.jpg" alt="women Item 4">
+                            <h3>Nail Polish</h3>
+                            <p>Price: $35</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- JavaScript -->
+                <script>
+                   // Add to Cart Functionality
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    function addToCart(item) {
+                        cart.push(item);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        alert(item.name + " has been added to your cart.");
+                    }
+
+                    // Add to cart buttons
+                    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+                    addToCartButtons.forEach(button => {
+                        button.addEventListener("click", () => {
+                            const productCard = button.closest(".product-card");
+                            const item = {
+                                imgSrc: productCard.querySelector("img").src,
+                                name: productCard.querySelector(".product-name, h3").textContent,  // Select either .product-name or h3
+                                price: productCard.querySelector(".product-price, p").textContent
+                            };
+                            addToCart(item);
+                        });
+                    });
+                </script>
+                
+</body>
+
+</html>
